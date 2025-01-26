@@ -1,0 +1,42 @@
+name: 'dbt_project_dw'
+profile: 'db-project-dw-local'
+config-version: 2
+version: '1.0.0'
+require-dbt-version: [">=1.0.0", "<2.0.0"]
+
+seed-paths:
+  - seeds
+macro-paths:
+  - macros
+model-paths:
+  - models
+vars:
+  hash: SHA1
+  concat_string: '||'
+  hash_content_casing: 'UPPER'
+  enable_native_hashes: true
+  dbt_data_dispatch_list: [spark_utils]
+  "dbt_date:time_zone": "America/Chicago"
+  file_path: "{{var('file_path')}}"
+  file_location: "default_location"
+  file_name: []
+  landing_storage_location: "abfss:path from azure or s3 path"
+  target_storage_location: " path"
+  file_type: "parquet/json/csv"
+  max_workers: "{{var('max_workers')}}" #can also define the value
+  min_workers: "{{var('min_workers')}}" #can also define the value
+  date_format_epression: "yyyy-MM-dd HH:mm:ss.SSSSSS"
+  spark_version: "13.3.x-scala2.12" #typically you find it in your cluster config
+  node_type_id: "Standard_DS3_v2"
+
+models:
+  dbt_project_dw:
+    bronze:
+      +tags:
+        - "bronze"
+      raw:
+        customer:
+          +tags:
+            - ""
+            materialized: table
+
