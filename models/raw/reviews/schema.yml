@@ -1,0 +1,13 @@
+version:2
+
+models:
+  - name: reviews
+sources:
+  - name:  reviews
+    schema: bronze
+    tables:
+      - name:  reviews
+        columns:
+          - name: Reviewid
+          - name: Rating
+          - name: Feedback

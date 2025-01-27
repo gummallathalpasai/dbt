@@ -35,8 +35,11 @@ models:
       +tags:
         - "bronze"
       raw:
-        customer:
+        customers:
           +tags:
-            - ""
-            materialized: table
+            - "dbt_customer"
+        cars:
+          +tags:
+            - "dbt_cars"
+            materialized: table #optional can write here or can write it in the table config
 

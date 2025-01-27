@@ -1,0 +1,15 @@
+version:2
+
+models:
+  - name:  cars
+sources:
+  - name:  cars
+    schema: bronze
+    tables:
+      - name:  cars
+        columns:
+          - name: Carid
+          - name: CarName
+          - name: Model
+          - name: Make
+          - name: Year
