@@ -3,17 +3,16 @@
     file_format='delta'
     uniue_key='#value if any'
     schema='bronze'
-    incremntal_strategy='append',
-    post_hook = appl)}}
+    incremntal_strategy='append')}}
 
 
 {%- set yaml_metadata -%}
 source_model: 'raw_reviews'
 hashed_columns:
-    HK:
+    REVIEW_HK:
     - Reviewid
 
-    HASHDIFF:
+    REVIEW_HASHDIFF:
         is_hashdiff: true
         columns:
             - Rating
