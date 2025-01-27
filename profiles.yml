@@ -1,1 +1,10 @@
 db-project-dw-local:
+  target: databricks_job
+  outputs:
+    databricks_jobs:
+      type: databricks
+      catalog: #give the name of the data catalog if any (optional)
+      host: #host
+      http_path: #Path
+      token: #Access token from databricks
+      threads: 4

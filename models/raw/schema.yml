@@ -1,2 +1,19 @@
-config:
-  landing_zone:
+version:2
+
+models:
+  - name:  customer
+sources:
+  - name:  customer
+    schema: bronze
+    tables:
+      - name:  customer
+        columns:
+          - name: Customerid
+          - name: CustomerName
+          - name: MobileNumber
+          - name: Gender
+          - name: Age
+          - name: Address
+          - name: City
+          - name: State
+          - name: ZipCode
